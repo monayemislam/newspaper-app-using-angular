@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="d-flex justify-content-center text-success"><h2 class="p-2 border m-1">Tech Headlines !</h2></div>
+    <div class="row g-4">
+        <div class="col-md-4" *ngFor="let heading of techHeading">
+            <div class="card">
+                <img src="{{heading.urlToImage}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{heading.title}}</h5>
+                    <p class="card-text">{{heading.content}}<a href="{{heading.url}}" class="link-primary ps-2">Read More</a></p>
+                   
+                </div>
+                <div class="card-footer text-muted d-flex justify-content-between">
+                    <div>
+                        {{heading.publishedAt|date:'fullDate'}}
+                    </div>
+                    <div *ngIf="heading.author; then thenBlock else elseBlock">
+                        
+                    </div>
+                    <ng-template #thenBlock>
+                        <span>{{heading.author}}</span>
+                    </ng-template>
+                    <ng-template #elseBlock>
+                        <span>Monayem Islam</span>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

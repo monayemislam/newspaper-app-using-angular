@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HeadlineComponent } from './headline/headline.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { NewsApiServiceService } from './service/news-api-service.service'
+import { NewsApiServiceService } from './service/news-api-service.service';
+import { TechComponent } from './tech/tech.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeadlineComponent
+    HeadlineComponent,
+    TechComponent
   ],
   imports: [
     BrowserModule,
